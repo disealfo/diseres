@@ -29,24 +29,31 @@ class Persona(models.Model):
     fechaNacimiento = models.DateField()
     correo = models.EmailField()
 
+    def __str__(self):
+        return '{} {}'.format(self.nombre, self.apellidos)
+
+
+class TipoEstablecimiento(models.Model):
+    nombre = models.CharField(max_length=100)
+    descripcion = models.TextField(max_length=500)
+
 class Establecimiento(models.Model):
     nombre = models.CharField(max_length=100)
     telefono = models.ForeignKey(Telefono, null=True, blank=True, on_delete=models.CASCADE)
     direccion = models.ForeignKey(Direccion, null=True, blank=True, on_delete=models.CASCADE)
+    tipoEStablecimiento = models.ForeignKey(TipoEstablecimiento, null=True, blank=True, on_delete=models.CASCADE)
 
-class tipoEstablecimiento(models.Model):
-    nombre = models.CharField(max_length=100)
-    descripcion = models.TextField(max_length=500)
+
 
 class Servicio(models.Model):
     nombre = models.CharField(max_length=100)
     duracion = models.TimeField()
-    precio = models.DecimalField()
+    precio = models.DecimalField(max_digits=3, decimal_places=2)
     descripcion = models.TextField(max_length=500)
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=100)
-    precio = models.DecimalField()
+    precio = models.DecimalField(max_digits=3, decimal_places=2)
     unidades = models.IntegerField()
 
 

@@ -4,8 +4,28 @@
 from django.contrib import admin
 
 
-#from app
+from models import Persona
+from models import Establecimiento
+from models import TipoEstablecimiento
+from models import Direccion
+from models import Telefono
+from models import Rol
+from models import Reserva
+from models import Producto
+from models import Servicio
+from models import TipoEstablecimiento
 
-#admin.site.register(Persona)
+
+admin.site.register(Persona)
+admin.site.register(Establecimiento)
+admin.site.register(TipoEstablecimiento)
+admin.site.register(Direccion)
+admin.site.register(Telefono)
+admin.site.register(Rol)
+admin.site.register(Reserva)
+admin.site.register(Producto)
+admin.site.register(Servicio)
+
+
 # Register your models here.
 # Register your models here.
