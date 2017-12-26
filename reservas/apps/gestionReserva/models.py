@@ -56,11 +56,6 @@ class Producto(models.Model):
     precio = models.DecimalField(max_digits=3, decimal_places=2)
     unidades = models.IntegerField()
 
-
-class Establecimiento(models.Model):
-    nombre = models.CharField(max_length=100, blank=True)
-
-
 class Reserva(models.Model):
     fecha = models.DateField()
     establecimiento = models.ForeignKey(Establecimiento,null=True, blank=True, on_delete=models.CASCADE)

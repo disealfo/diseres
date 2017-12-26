@@ -6,7 +6,6 @@ from django.contrib import admin
 
 from models import Persona
 from models import Establecimiento
-from models import TipoEstablecimiento
 from models import Direccion
 from models import Telefono
 from models import Rol
