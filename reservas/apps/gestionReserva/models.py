@@ -37,14 +37,6 @@ class TipoEstablecimiento(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField(max_length=500)
 
-class Establecimiento(models.Model):
-    nombre = models.CharField(max_length=100)
-    telefono = models.ForeignKey(Telefono, null=True, blank=True, on_delete=models.CASCADE)
-    direccion = models.ForeignKey(Direccion, null=True, blank=True, on_delete=models.CASCADE)
-    tipoEStablecimiento = models.ForeignKey(TipoEstablecimiento, null=True, blank=True, on_delete=models.CASCADE)
-
-
-
 class Servicio(models.Model):
     nombre = models.CharField(max_length=100)
     duracion = models.TimeField()
@@ -55,6 +47,17 @@ class Producto(models.Model):
     nombre = models.CharField(max_length=100)
     precio = models.DecimalField(max_digits=3, decimal_places=2)
     unidades = models.IntegerField()
+
+
+class Establecimiento(models.Model):
+    nombre = models.CharField(max_length=100)
+    telefono = models.ForeignKey(Telefono, null=True, blank=True, on_delete=models.CASCADE)
+    direccion = models.ForeignKey(Direccion, null=True, blank=True, on_delete=models.CASCADE)
+    tipoEstablecimiento = models.ForeignKey(TipoEstablecimiento, null=True, blank=True, on_delete=models.CASCADE)
+    servicio = models.ForeignKey(Servicio, null=True, blank=True, on_delete=models.CASCADE)
+    producto = models.ForeignKey(Producto,null=True, blank=True, on_delete=models.CASCADE)
+
+
 
 class Reserva(models.Model):
     fecha = models.DateField()
