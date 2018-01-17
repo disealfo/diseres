@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.gestionReserva',
+    'app_login',
+    'social_django',
     'social.apps.django_app.default',
 
 ]
