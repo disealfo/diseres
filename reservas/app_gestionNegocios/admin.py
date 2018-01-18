@@ -24,7 +24,3 @@ admin.site.register(Rol)
 admin.site.register(Reserva)
 admin.site.register(Producto)
 admin.site.register(Servicio)
-
-
-# Register your models here.
-# Register your models here.

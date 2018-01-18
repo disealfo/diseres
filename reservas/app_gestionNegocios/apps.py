@@ -4,8 +4,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class GestionreservaConfig(AppConfig):
-    name = 'gestionReserva'
-
-
-
+class AppGestionnegociosConfig(AppConfig):
+    name = 'app_gestionNegocios'

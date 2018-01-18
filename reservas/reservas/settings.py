@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.gestionReserva',
+    'app_gestionNegocios',
     'app_login',
     'social_django',
     'social.apps.django_app.default',
@@ -129,8 +129,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
     'social_core.backends.google.GoogleOAuth2',
-
     'django.contrib.auth.backends.ModelBackend',
 )
 
@@ -138,3 +139,7 @@ SOCIAL_AUTH_LOGIN_REDIRECT_URL='/'
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='596371206736-nb315puq0gdogbfggfc9h87m5858pfg4.apps.googleusercontent.com'  #Paste CLient Key
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'y6dUM84C9rnJoTsS0LN7P5kl' #Paste Secret Key
+
+
+SOCIAL_AUTH_FACEBOOK_KEY ='933330886689610'
+SOCIAL_AUTH_FACEBOOK_SECRET ='aa3aaf3f8491c47a974e62c53574e1ee'

@@ -14,7 +14,9 @@
 	{% if user.is_authenticated %}
              <p>Hello, {{ user.username }}</p>
 	{% else %}
-             <a href="{% url 'social:begin' 'google-oauth2' %}">Log with google</a>
+             <a href="{% url 'social:begin' 'google-oauth2' %}">Login con  google</a>
+		     <br>
+		     <a href="{% url 'social:begin' 'facebook' %}">Login con facebook</a>
 	{% endif %}
     </div>
 </body>
