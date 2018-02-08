@@ -25,7 +25,7 @@ SECRET_KEY = 'hkvzq413ns2&9v=fbcmo0dm0^z6#8qv()up3-x4l-w$69#zv77'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,8 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app_gestionNegocios',
-    'app_login',
+    'app_authorization',
+    'app_establishment',
+    'app_people',
+    'app_products',
+    'app_reservations',
+    'app_services',
+    'app_errors',
     'social_django',
     'social.apps.django_app.default',
 
@@ -81,7 +86,7 @@ WSGI_APPLICATION = 'reservas.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'reservas',
+        'NAME': 'Reservations',
         'USER':'postgres',
         'PASSWORD':'Master01*',
         'HOST':'localhost',
@@ -112,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-co'
 
 TIME_ZONE = 'UTC'
 
@@ -127,6 +132,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookAppOAuth2',
