@@ -1,0 +1,39 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<br>
+    {% csrf_token %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Duracion</td>
+            <td>Precio</td>
+            <td>Descripcion</td>
+            <td>Editar</td>
+            <td>Eliminar</td>
+        </tr>
+    </thead>
+    <tbody>
+    {% if object_list %}
+
+        {% for service in object_list %}
+        <tr>
+            <td>{{ service.name }}</td>
+            <td>{{ service.duration }}</td>
+            <td>{{ service.price }}</td>
+            <td>{{ service.description }}</td>
+            <td>
+                <a href="#" class="btn btn-primary">Editar</a>
+
+            </td>
+            <td>
+                 <a href="#" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    {% else %}
+        <h1>No existen productos actualmente</h1>
+    {% endif %}
+    </tbody>
+</table>
+{% endblock %}

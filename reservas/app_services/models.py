@@ -7,5 +7,5 @@ from django.db import models
 class Service(models.Model):
     name = models.CharField(max_length=100)
     duration = models.TimeField()
-    price = models.DecimalField(max_digits=3, decimal_places=2)
+    price = models.IntegerField()
     description = models.TextField(max_length=500)
