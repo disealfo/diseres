@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import include,url
-from django.contrib import admin
-from app_authorization.views import index
+from views import PersonCreate
 
 
 urlpatterns = [
-    #url(r'^listarServicios/',ServicioList.as_view(),name='servicio_listar')
+     url(r'^registro/',PersonCreate.as_view(),name='crear_persona'),
 ]

@@ -6,12 +6,12 @@ from app_products.models import Product
 from app_services.models import Service
 # Create your models here.
 class Phone(models.Model):
-    number = models.CharField(max_length=100)
-    description = models.TextField(max_length=500)
+    number = models.IntegerField()
+    description = models.TextField(max_length=500, null=True, blank=True,)
 
 class Address(models.Model):
     address = models.CharField(max_length=100)
-    description = models.TextField(max_length=500)
+    description = models.TextField(max_length=500, null=True, blank=True,)
 
 
 class EstablishmentType(models.Model):

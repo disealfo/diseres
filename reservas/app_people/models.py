@@ -10,12 +10,25 @@ class Rol(models.Model):
 
 
 class Person(models.Model):
+    MALE = 'M'
+    FEMALE = 'F'
+    OTHER = 'O'
+    PERSON_GENDER =(
+        (MALE,'Masculino'),
+        (FEMALE,'Femenino'),
+        (OTHER,'Otro'),
+    )
     user = models.OneToOneField(User)
     rol = models.ForeignKey(Rol, null= True , blank=True,on_delete=models.CASCADE)
     phone = models.ForeignKey(Phone, null= True, blank= True , on_delete=models.CASCADE)
     address = models.ForeignKey(Address,null= True, blank= True , on_delete=models.CASCADE)
     fullName = models.CharField(max_length=100, blank=True)
     lastName = models.CharField(max_length=100)
+    gender = models.CharField(
+        max_length=1,
+        choices=PERSON_GENDER,
+        blank=True,
+    )
     birthdate = models.DateField()
     email = models.EmailField()
 

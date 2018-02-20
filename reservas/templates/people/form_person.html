@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+
+    <br><br>
+    <div class ="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form2.username.name}}">{{form2.username.label}}
+                    {{form2.username}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form2.password.name}}">{{form2.password.label}}
+                    {{form2.password}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form.fullName.name}}">{{form.fullName.label}}
+                    {{form.fullName}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form.lastName.name}}">{{form.lastName.label}}
+                    {{form.lastName}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form.gender.name}}">{{form.gender.label}}
+                    {{form.gender}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form.birthdate.name}}">{{form.birthdate.label}}
+                    {{form.birthdate}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form.email.name}}">{{form.email.label}}
+                    {{form.email}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form3.number.name}}">{{form3.number.label}}
+                    {{form3.number}}
+                </label>
+            </div>
+        </div>
+         <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label for="{{form4.address.name}}">{{form4.address.label}}
+                    {{form4.address}}
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                Guardar
+            </button>
+        </div>
+    </div>
+</form>
+{% endblock %}
